@@ -1,44 +1,52 @@
-# Basic-KeyLogger
-Python Keylogger This keylogger records keystrokes in the background and saves them to a log file. It runs silently using the pynput library, capturing user input for monitoring or testing purposes. Ideal for cybersecurity research and educational use.
-Python Keylogger
+# Keylogger Project
 
-Description
+## Overview
+This is a simple keylogger application built in Python using the pynput library. The program captures keyboard inputs and saves them to a text file.
 
-This Python keylogger records keystrokes in the background and saves them to a log file (log.txt). It uses the pynput library to capture user input while efficiently handling spaces and special keys. The logger stops when the Escape (Esc) key is pressed.
+## Features
+* Records keystrokes in real-time
+* Saves captured keystrokes to a log file
+* Filters special keys for better readability
+* Terminates when the Escape key is pressed
 
-Features
+## Requirements
+* Python 3.x
+* pynput library
 
-Captures and logs all keystrokes.
+## Installation
+1. Ensure you have Python installed on your system
+2. Install the required library using pip:
 
-Stores logs in a text file (log.txt).
-
-Handles special keys (like Space, Enter, etc.).
-
-Stops logging when the Escape (Esc) key is pressed.
-
-Requirements
-
-Ensure you have Python installed along with the required library:
-
+```
 pip install pynput
+```
 
-Installation & Usage
+## Usage
+1. Run the script:
 
-Clone this repository or copy the script.
-
-Install dependencies using the command above.
-
-Run the script:
-
+```
 python keylogger.py
+```
 
-The recorded keystrokes will be saved in log.txt.
+2. The program will start capturing keystrokes
+3. Every 10 keystrokes, the data is saved to "log.txt" in the same directory
+4. Press the Escape key to stop the keylogger
 
-Disclaimer
+## How It Works
+The keylogger uses event listeners to capture keyboard inputs:
+* `on_press()`: Captures each key press and adds it to a buffer
+* `write_file()`: Processes the collected keystrokes and writes them to a log file
+* `on_release()`: Checks for the Escape key to terminate the program
 
-This project is for educational and cybersecurity research purposes only. Unauthorized use of keyloggers is illegal and unethical.
+The program distinguishes between regular characters and special keys (like Space, Enter, etc.) for cleaner logging.
 
-License
+## Warning
+This type of application should only be used for legitimate purposes such as:
+* Monitoring your own computer
+* Educational purposes
+* With explicit consent from all users of the monitored system
 
-This project is open-source and licensed under the MIT License.
+Unauthorized monitoring of computer usage is illegal in many jurisdictions and violates privacy rights.
 
+## License
+This project is meant for educational purposes only.
